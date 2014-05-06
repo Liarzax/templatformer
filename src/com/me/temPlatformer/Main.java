@@ -5,8 +5,10 @@ import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Vector2f;
 
 import controller.ControlHandler;
+import entities.Hero;
 
 public class Main extends BasicGame{
 	
@@ -15,10 +17,12 @@ public class Main extends BasicGame{
 							 FPS_LIMIT = 60;
 	
 	private static boolean showFPS = true,
-						   fullscreen = false;
+						   fullscreen = false,
+						   debug = true;
 	private static String title = "Platformer v1.0";
 	
 	private ControlHandler controlHandler = new ControlHandler();
+	private Hero h = new Hero(new Vector2f(200, 200));
 	
 	public Main(String title){
 		super(title);
@@ -36,16 +40,16 @@ public class Main extends BasicGame{
 
 	public void render(GameContainer container, Graphics g) throws SlickException {
 		// TODO Auto-generated method stub
-		
+		h.render(g, debug);
 	}
 
 	public void init(GameContainer container) throws SlickException {
 		controlHandler.init(container);
-		
+		h.init();
 	}
 
 	public void update(GameContainer container, int delta) throws SlickException {
 		controlHandler.update(container);
-		
+		h.update(delta);
 	}
 }

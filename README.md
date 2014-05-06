@@ -1,5 +1,17 @@
 Templatformer
 ============
+Controls
+------------
+- Escape = Terminate game.
+
+Changes v1.1
+------------
+- Programmed Basic entity and hero class (including rendering the debug mode of hero)
+- Programmed the basis of a simple state machine.
+
+Known bugs
+------------
+- N/A
 
 Changes v1.0
 ------------
@@ -9,6 +21,3 @@ Changes v1.0
 Known bugs
 ------------
 - N/A
-
-How to Play;
-------------
