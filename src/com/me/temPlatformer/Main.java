@@ -19,10 +19,10 @@ public class Main extends BasicGame{
 	private static boolean showFPS = true,
 						   fullscreen = false,
 						   debug = true;
-	private static String title = "Platformer v1.0";
+	private static String title = "Platformer v1.3";
 	
 	private ControlHandler controlHandler = new ControlHandler();
-	private Hero h = new Hero(new Vector2f(200, 200));
+	private Hero h = new Hero(new Vector2f(200, 300));
 	
 	public Main(String title){
 		super(title);
@@ -51,5 +51,6 @@ public class Main extends BasicGame{
 	public void update(GameContainer container, int delta) throws SlickException {
 		controlHandler.update(container);
 		h.update(delta);
+		h.setLocation(h.getNextLocation());
 	}
 }

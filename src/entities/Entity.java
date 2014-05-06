@@ -7,10 +7,12 @@ import org.newdawn.slick.geom.Vector2f;
 public abstract class Entity {
 	
 	protected Rectangle box;
+	protected Vector2f nextLocation;
 	
 	public Entity(Vector2f location, float width, float height){
 		box = new Rectangle(0,0, width, height);
 		setLocation(location);
+		nextLocation = getLocation().copy();
 	}
 	
 	public abstract void init();
@@ -23,6 +25,20 @@ public abstract class Entity {
 	{
 		box.setX(location.x - box.getWidth() / 2);
 		box.setY(location.y - box.getHeight() / 2);
+	}
+	
+	public Vector2f getNextLocation() {
+		return this.nextLocation;
+	}
+	
+	protected void setNextLocation(Vector2f nextLocation) {
+		this.nextLocation = nextLocation;
+	}
+	protected void setNextX(float nextX) {
+		nextLocation.x = nextX;
+	}
+	protected void setNextY(float nextY) {
+		nextLocation.y = nextY;
 	}
 	
 	public Rectangle getBox(){ return box;}

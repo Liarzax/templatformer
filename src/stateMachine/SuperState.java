@@ -1,16 +1,14 @@
 package stateMachine;
 
-import entities.Entity;
+import entities.Hero;
 
 public abstract class SuperState {
-	private Entity entity;
+	protected Hero hero;
 	
-	protected SuperState[] nextStates;
-	
-	public SuperState(Entity entity){
-		this.entity = entity;
+	public SuperState(Hero hero){
+		this.hero = hero;
 	}
 	
 	public abstract void init();
-	public abstract void update();
+	public abstract void update(int delta);
 }
