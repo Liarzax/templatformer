@@ -4,6 +4,14 @@ Controls
 ------------
 - Escape = Terminate game.
 
+Changes v1.2
+------------
+- created Area class that Imports Map data from text file
+
+Known bugs
+------------
+- N/A
+
 Changes v1.1
 ------------
 - Programmed Basic entity and hero class (including rendering the debug mode of hero)
